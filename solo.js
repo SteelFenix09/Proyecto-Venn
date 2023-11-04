@@ -5,7 +5,7 @@ const conjuntoB = [2, 3, 4, 7];
 const conjuntoC = [4, 5, 6, 7];
 
 function selecConjunto(opcion) {
-    let conjuntoSelec;
+    let conjuntoSelec
     switch (opcion) {
         case 'A':
             conjuntoSelec = conjuntoA;
@@ -20,8 +20,8 @@ function selecConjunto(opcion) {
             console.log("Opción no válida");
             return [];
     }
-    console.log("El conjunto ", opcion, " contiene estos elementos: ", conjuntoSelec);
-    return conjuntoSelec;
+    return conjuntoSelec
+    
 }
 
 
@@ -37,15 +37,22 @@ function diferencia(setA, setB) {
     return setA.filter(value => !setB.includes(value))
 }
 
+function simetrica(setA, setB){
+    let unionConjunto = union(setA, setB)
+    let interConjunto = interseccion(setA, setB)
+    return diferencia(unionConjunto, interConjunto)
+}
+
 function menu() {
     console.log("1: Union");
     console.log("2: Interseccion");
     console.log("3: Coplemento");
+    console.log("4: Diferencia");
     let operacion = prompt("Selecciona una operacion ")
 
     console.log("A = Conjunto A");
     console.log("B = Conjunto B");
-    console.log("C = Conjunyo C");
+    console.log("C = Conjunto C");
     let conjunto1 = prompt("Selecciona el primer conjunto ")
     let conjunto2 = prompt("Selecciona el segundo conjunto ")
 
@@ -62,7 +69,7 @@ function menu() {
             console.log("Intersección de ", conjunto1, " y ", conjunto2, ": ", interConjunto);
             break;
         case '3':
-            console.log("Necesita colocar 2 veces el conjunto que desea conocer");
+           
             if (conjunto1 !== conjunto2) {
                 console.log("Para el complemento, por favor selecciona el mismo conjunto dos veces.");
                 break
@@ -70,6 +77,10 @@ function menu() {
             let compleConjunto = diferencia(universal, seleccion1);
             console.log(conjunto1, " su complemento es: ", compleConjunto);
             break;
+
+            case '4':
+                let diferenciaSimetrica= simetrica(seleccion1, seleccion2)
+                console.log("La diferencia simetrica de ", seleccion1, " y ",seleccion2, " es ", diferenciaSimetrica);
         default:
             console.log("Operación no válida");
             break;
