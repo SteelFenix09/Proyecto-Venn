@@ -1,0 +1,48 @@
+.venn-diagram {
+  position: relative;
+  width: 500px; /* Ancho total del diagrama */
+  height: 500px; /* Altura total del diagrama */
+  margin: 50px auto; /* Centrar horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  position: absolute;
+  width: 200px; /* Tamaño de cada círculo */
+  height: 200px; /* Tamaño de cada círculo */
+  border-radius: 50%;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  font-size: 34px;
+  color: white;
+}
+
+.circle1 {
+  background-color: blue;
+  top: 100px;
+  left: 100px;
+}
+
+.circle2 {
+  background-color: red;
+  top: 100px;
+  right: 100px;
+}
+
+.circle3 {
+  background-color: green;
+  bottom: 100px;
+  left: calc(50% - 100px);
+  z-index: 1; /* Coloca este círculo por encima de los otros dos */
+}
+
+.circle:hover {
+  opacity: 0.7; /* Cambia la opacidad al pasar el ratón */
+}
+
+
+
