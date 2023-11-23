@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Diagrama de Venn </title>
-  <link rel="stylesheet" href="styles.css">
+<title>Teorema de conjuntos</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="venn-diagram">
-    <div class="circle circle1">A</div>
-    <div class="circle circle2">B</div>
-    <div class="circle circle3">C</div>
+
+  
+
+<h1>Teorema de conjuntos</h1>
+
+<div class="venn-diagram">
+    <div id="circle1" class="circle">A</div>
+    <div id="circle2" class="circle">B</div>
+    <div id="circle3" class="circle">C</div>
   </div>
+
+<p>Introduce una expresión de conjuntos:</p>
+
+<input type="text" id="expresion" />
+
+<button onclick="evaluar()">Evaluar</button>
+
+<p id="resultado"></p>
+
+<script>
+function evaluar() {
+  var expresion = document.getElementById("expresion").value;
+  var resultado = evaluarExpresion(expresion);
+
+  document.getElementById("resultado").innerHTML = "<strong>" + resultado + "</strong>";
+}
+</script>
 </body>
 </html>

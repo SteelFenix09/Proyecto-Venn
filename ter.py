@@ -22,7 +22,8 @@ def complemento(setA):
 def simetrica(setA, setB):
     return list(set(setA).symmetric_difference(set(setB)))
 
-def evaluar(expresion):
+def evaluar(expresion, ):
+    global document
     conjuntos = {
         'A': conjuntoA,
         'B': conjuntoB,
@@ -81,7 +82,13 @@ def evaluar(expresion):
         return []
 
 
+def marcar(resultado,color):
+    for elemento in resultado:
+        if elemento in "A":
+            document.getElementById("circle1").styles.fill = color
+        elif elemento in "B":
+            document.getElementById("circle2").styles.fill = color
+        else:
+            document.getElementById("circle3").styles.fill = color
+            
 
-
-expresion = input("Ingresa la expresion a validar: ")
-print("El resultado es:", evaluar(expresion))
